@@ -24,6 +24,15 @@
 \fancyhead[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
+\usepackage[
+natbib		= true,
+style		= gost-numeric,
+sorting		= nyvt,
+backend		= biber,
+language	= autobib,
+autolang	= other]{biblatex}
+\addbibresource{bib/literature.bib}
+
 \begin{document}
 	\input{title_page/title_page.tex}
 	
@@ -417,4 +426,14 @@
 			\label{fig:img5}
 		\end{center}
 	\end{figure}
+
+	\cite[1]{2022javascript}
+	\cite[2]{ларин2022методика}
+	\cite[3]{бабичев2022распределенные}
+	\cite[4]{kovacs2018using}
+	\cite[5]{tamam2021use}
+	\cite[6]{peters2017building}
+	\cite[7]{hohenwarter2009introducing}
+	\cite[7]{львовский2022набор}
+	\printbibliography
 \end{document}
