@@ -6,6 +6,30 @@
 \usepackage{fontspec}
 \usepackage{hyperref}
 
+\usepackage{color}
+\usepackage{listings}
+\addto\captionsrussian{
+	\renewcommand{\lstlistingname}{Исходный код}
+}
+\lstset{ %
+	%language=C,                 % выбор языка для подсветки (здесь это С)
+	basicstyle=\small\sffamily, % размер и начертание шрифта для подсветки кода
+	numbers=left,               % где поставить нумерацию строк (слева\справа)
+	numberstyle=\small,           % размер шрифта для номеров строк
+	stepnumber=1,                   % размер шага между двумя номерами строк
+	numbersep=-6pt,                % как далеко отстоят номера строк от подсвечиваемого кода
+	backgroundcolor=\color[rgb]{0.95,0.95,0.95}, % цвет фона подсветки - используем \usepackage{color}
+	showspaces=false,            % показывать или нет пробелы специальными отступами
+	showstringspaces=false,      % показывать или нет пробелы в строках
+	showtabs=false,             % показывать или нет табуляцию в строках
+	%frame=single,              % рисовать рамку вокруг кода
+	tabsize=2,                 % размер табуляции по умолчанию равен 2 пробелам
+	captionpos=b,              % позиция заголовка вверху [t] или внизу [b] 
+	breaklines=true,           % автоматически переносить строки (да\нет)
+	breakatwhitespace=false, % переносить строки только если есть пробел
+	escapeinside={\%*}{*)}   % если нужно добавить комментарии в коде
+}
+
 \usepackage{graphicx}
 \graphicspath{{img/}}
 \DeclareGraphicsExtensions{.png}
@@ -50,9 +74,9 @@ autolang	= other]{biblatex}
 	
 	\hfill \break
 	
-	\textbf{Этап 1. Создание сервера}
+	\textbf{1. Выбор и анализ инструмента для работы с геометрическими объектами.}
 	
-	\input{sections/e1.tex}
+	\input{sections/g1.tex}
 	
 	\hfill \break
 	
