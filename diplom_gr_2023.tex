@@ -18,6 +18,8 @@
 \setdefaultlanguage{russian}
 
 \usepackage{minted}
+\usepackage{caption}
+\newenvironment{sourcecode}{\captionsetup{type=listing}}{}
 \setminted[HTML]{linenos, fontsize=\small, breaklines=true, breakafter=>}
 \setminted[CSS]{linenos, fontsize=\small, breaklines=true, breakafter=>}
 \setminted[JS]{linenos, fontsize=\small, breaklines=true, breakafter=>}
