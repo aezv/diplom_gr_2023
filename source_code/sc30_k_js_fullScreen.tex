@@ -1,0 +1,18 @@
+\begin{lstlisting}[label=sc30_k_js_fullScreen,caption={Скрипт полноэкранного режима: fullScreen.js}]
+    var fullscreen = document.getElementById('fullscreen');
+
+    function toggleFullScreen() {
+        if (!document.fullscreenElement) {
+            fullscreen.innerHTML = 'Свернуть';
+            document.documentElement.requestFullscreen();
+        } else {
+            if (document.exitFullscreen) {
+                fullscreen.innerHTML = 'На весь экран';
+                document.exitFullscreen();
+            }
+        }
+    }
+    
+    fullscreen.addEventListener('click', toggleFullScreen);
+    
+\end{lstlisting}
