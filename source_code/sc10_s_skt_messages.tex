@@ -1,0 +1,16 @@
+\begin{lstlisting}[label=sc10_s_skt_messages,caption={Скрипт сокета чата на стороне сервера: messages.js}]
+    const dbRAM = require('../dbRAM.js');
+
+    module.exports = function (io, socket, rooms) {
+        socket.on('message', function (msg) {
+            try {
+                dbRAM.addChat(msg.idRoom, msg.userName + ': ' + msg.body, rooms);
+                io.to(msg.idRoom).emit('message', msg.userName + ': ' + msg.body);
+            }
+            catch (e) {
+                console.log(e);
+            }
+        });
+    };
+    
+\end{lstlisting}
