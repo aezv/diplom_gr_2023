@@ -1,0 +1,15 @@
+\begin{lstlisting}[label=sc9_s_skt_users_list,caption={Скрипт сокета передачи списка пользователей клиенту на стороне сервера: users\_list.js}]
+    const dbRAM = require('../dbRAM.js');
+
+    module.exports = function (io, socket, rooms) {
+        try {
+            socket.on('users_list', function (msg) {
+                io.to(msg).emit('users_list', dbRAM.getUsers(msg, rooms));
+            });
+        }
+        catch (e) {
+            console.log(e);
+        }
+    };
+    
+\end{lstlisting}
