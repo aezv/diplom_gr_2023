@@ -1,0 +1,26 @@
+\begin{lstlisting}[label=sc14_k_hb_choiceCreateRoom,caption={Страница выбора типа комнаты: choiceCreateRoom.handlebars}]
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/choiceCreateRoom.css">
+        <title>Choice Create Room</title>
+    </head>
+    
+    <body>
+        <div>
+            <form action="/createRoom" method="POST">
+                <button class="btn" name="status" value="create_free">Комната со свободными правами</button>
+            </form>
+            <form action="/createRoom" method="POST">
+                <button class="btn" name="status" value="create_restricted">Комната с ограниченными правами</button>
+            </form>
+        </div>
+    </body>
+    
+    </html>
+
+\end{lstlisting}
