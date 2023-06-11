@@ -79,14 +79,5 @@ API предполагает создание объекта <<\emph{GeoGebra}>>
 собой отдельное окно программы, работающее на странице в браузере. На официальном сайте в документации
 подробно описано API апплетов.
 
-\begin{lstlisting}[label=g1_code1,caption={Пример получения апплета через JavaScript}]
-    const ggb = new GGBApplet({
-            appletOnLoad(api_obj) {
-                // api_obj provides the applet API
-            }
-        });
-    ggb.inject(document.body);
-\end{lstlisting}
-
 Именно функционал программы <<\emph{GeoGebra}>> и наличие открытого API для работы в браузере
 выделяет ее на фоне всех остальных.
