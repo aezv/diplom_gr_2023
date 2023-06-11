@@ -7,28 +7,29 @@
 \usepackage{hyperref}
 \usepackage{float}
 
-\usepackage{color}
-\usepackage{listings}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+\newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman}
+\newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial}
+\newfontfamily\cyrillicfonttt[Script=Cyrillic]{Courier New}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+
+\usepackage{minted}
+\setminted[HTML]{linenos, fontsize=\small, breaklines=true, breakafter=>}
+\setminted[CSS]{linenos, fontsize=\small, breaklines=true, breakafter=>}
+\setminted[JS]{linenos, fontsize=\small, breaklines=true, breakafter=>}
+
+\renewcommand{\theFancyVerbLine}{\sffamily %стиль нумерации
+\textcolor[rgb]{0.5,0.05,0.8}{\small
+\arabic{FancyVerbLine}}}
+
+
+
 \addto\captionsrussian{
-	\renewcommand{\lstlistingname}{Исходный код}
-}
-\lstset{ %
-	%language=C,                 % выбор языка для подсветки (здесь это С)
-	basicstyle=\small\sffamily, % размер и начертание шрифта для подсветки кода
-	numbers=left,               % где поставить нумерацию строк (слева\справа)
-	numberstyle=\small,           % размер шрифта для номеров строк
-	stepnumber=1,                   % размер шага между двумя номерами строк
-	numbersep=-6pt,                % как далеко отстоят номера строк от подсвечиваемого кода
-	backgroundcolor=\color[rgb]{0.95,0.95,0.95}, % цвет фона подсветки - используем \usepackage{color}
-	showspaces=false,            % показывать или нет пробелы специальными отступами
-	showstringspaces=false,      % показывать или нет пробелы в строках
-	showtabs=false,             % показывать или нет табуляцию в строках
-	%frame=single,              % рисовать рамку вокруг кода
-	tabsize=2,                 % размер табуляции по умолчанию равен 2 пробелам
-	captionpos=b,              % позиция заголовка вверху [t] или внизу [b] 
-	breaklines=true,           % автоматически переносить строки (да\нет)
-	breakatwhitespace=false, % переносить строки только если есть пробел
-	escapeinside={\%*}{*)}   % если нужно добавить комментарии в коде
+	\renewcommand{\listingscaption}{Исходный код}
 }
 
 \usepackage{graphicx}
@@ -36,9 +37,6 @@
 \DeclareGraphicsExtensions{.png}
 
 \usepackage{pstricks}
-
-\defaultfontfeatures{Ligatures={TeX}, Renderer=Basic}
-\setmainfont[Ligatures={TeX, Historic}]{Times New Roman}
 
 \linespread{1.3}
 \setlength{\parindent}{1.25cm}
