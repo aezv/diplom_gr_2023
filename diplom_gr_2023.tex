@@ -6,6 +6,10 @@
 \usepackage{fontspec}
 \usepackage{hyperref}
 \usepackage{float}
+\usepackage{titlesec}
+\usepackage{tocloft} 
+
+\usepackage{indentfirst}
 
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
@@ -29,7 +33,29 @@
 \textcolor[rgb]{0.5,0.05,0.8}{\small
 \arabic{FancyVerbLine}}}
 
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
 
+\cftsetpnumwidth{15pt}
+
+\titleformat*{\section}{\Large\bfseries} %\large
+\titleformat*{\subsection}{\large\bfseries} %\normalsize
+
+\makeatletter
+\renewcommand{\l@section}{\@dottedtocline{1}{0em}{1.3em}}
+\renewcommand{\l@subsection}{\@dottedtocline{1}{1em}{2.1em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{1}{0em}{0em}}
+\makeatother
+
+\makeatletter
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesection}{\arabic{section}}
+\makeatother
+
+\newcommand{\lastsection}[1]{%
+	\section*{\centering#1}%
+	\addcontentsline{toc}{section}{#1}%
+}
 
 \addto\captionsrussian{
 	\renewcommand{\listingscaption}{Исходный код}
@@ -64,91 +90,93 @@ autolang	= other]{biblatex}
 	
 	\newpage
 	\setcounter{page}{2}
-	\textbf{Введение}
+	\tableofcontents
+
+	\newpage
+	\section*{\centering Введение}
+	\addcontentsline{toc}{section}{Введение}
 	
 	\input{sections/vvedenie.tex}
 	
 	\hfill \break
 	
-	\textbf{Цель и задачи}
+	\section*{\centering Цель и задачи}
+	\addcontentsline{toc}{section}{Цель и задачи}
 	
 	\input{sections/ciz.tex}
 	
 	\hfill \break
 	
-	\textbf{1. Выбор и анализ инструмента для работы с геометрическими объектами.}
+	\section{\centering Выбор и анализ инструмента для работы с геометрическими объектами}
 	
 	\input{sections/g1.tex}
 	
 	\hfill \break
 	
-	\textbf{2. Структура проекта <<Geometry Room>>.}
+	\section{\centering Структура проекта}
 	
 	\input{sections/g2.tex}
 	
-	\textbf{3. Схема взаимодействия между пользователями.}
+	\section{\centering Схема взаимодействия между пользователями}
 	
 	\input{sections/g3.tex}
 	
 	\newpage
 
-	\textbf{4. Платформа проекта: сервер.}
+	\section{\centering Платформа проекта: сервер}
 	
 	\input{sections/g4.tex}
 	
 	\hfill \break
 
-	\textbf{5. Веб-интерфейс: клиент.}
+	\section{\centering Веб-интерфейс: клиент}
 	
 	\input{sections/g5.tex}
 	
 	\hfill \break
 
-	\textbf{6. Механизма непрерывного обмена данными между клиентом и сервером: сокеты.}
+	\section{\centering Механизма непрерывного обмена данными между клиентом и сервером: сокеты}
 	
 	\input{sections/g6.tex}
 	
 	\hfill \break
 
-	\textbf{7. База данных для хранения результатов работы с комнатами.}
+	\section{\centering База данных для хранения результатов работы с комнатами}
 	
 	\input{sections/g7.tex}
 	
 	\hfill \break
-	
-	\textbf{Перспективы дальнейшей разработки:}
-	
-	\input{sections/pdr.tex}
-	
-	\hfill \break
 
-	\textbf{Заключение:}
-	
-	\input{sections/zakluchenie.tex}
-	
-	\hfill \break
-
-	\textbf{Лицензия проекта:}
+	\section{\centering Лицензия проекта}
 	
 	\input{sections/license.tex}
-	
-	\hfill \break
 
 	\newpage
-	\textbf{Дерево проекта:}
+	\section{\centering Дерево проекта}
 	
 	\input{sections/tree.tex}
 	
 	\hfill \break
 
-	\textbf{Исходный код:}
+	\section{\centering Исходный код}
 	
 	\input{sections/source_code.tex}
 	
-	\begin{center}
-		\url{https://geometryroom.herokuapp.com/}
-	\end{center}
+	\section*{\centering Перспективы дальнейшей разработки}
+	\addcontentsline{toc}{section}{Перспективы дальнейшей разработки}
+	
+	\input{sections/pdr.tex}
+	
+	\hfill \break
 
+	\section*{\centering Заключение}
+	\addcontentsline{toc}{section}{Заключение}
+	
+	\input{sections/zakluchenie.tex}
+
+	\newpage
+	\section*{\centering Список литературы}
+	\addcontentsline{toc}{section}{Список литературы}
 	\cite[1]{2022javascript}
 	\cite[2]{ларин2022методика}
 	\cite[3]{бабичев2022распределенные}
