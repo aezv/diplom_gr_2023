@@ -1,11 +1,8 @@
-\begin{lstlisting}[label=sc28_k_js_ggbOnInit,caption={Скрипт активации сокетов при загрузке апплета GeoGebra: ggbOnInit.js}]
-    function ggbOnInit(aplet) {
-        loadConnect();
-        loadPermission();
-        loadCursor();
-        socket.on('xml', function (msg) {
-            loadXML(msg);
-        });
-    }
-    
-\end{lstlisting}
+function ggbOnInit(aplet) {
+    loadConnect();
+    loadPermission();
+    loadCursor();
+    socket.on('xml', function (msg) {
+        loadXML(msg);
+    });
+}

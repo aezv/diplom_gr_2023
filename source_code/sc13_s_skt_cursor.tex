@@ -1,16 +1,13 @@
-\begin{lstlisting}[label=sc13_s_skt_cursor,caption={Скрипт сокета трансляции координат курсора мыши: cursor.js}]
-    const dbRAM = require('../dbRAM.js');
+const dbRAM = require('../dbRAM.js');
 
-    module.exports = function (socket, rooms) {
-        socket.on('cursor', function (msg) {
-            try {
-                if(socket.id = dbRAM.getPermissionUserId(msg.idRoom, rooms))
-                    socket.to(msg.idRoom).emit('cursor', msg);
-            }
-            catch (e) {
-                console.log(e);
-            }
-        });
-    }
-    
-\end{lstlisting}
+module.exports = function (socket, rooms) {
+    socket.on('cursor', function (msg) {
+        try {
+            if(socket.id = dbRAM.getPermissionUserId(msg.idRoom, rooms))
+                socket.to(msg.idRoom).emit('cursor', msg);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    });
+}

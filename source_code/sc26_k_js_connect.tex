@@ -1,10 +1,7 @@
-\begin{lstlisting}[label=sc26_k_js_connect,caption={Скрипт сокета подключения к комнате на стороне клиента: connect.js}]
-    function loadConnect() {
-        socket.emit('connect_room', { idRoom: idRoom, rootIdRoom: rootIdRoom, userName: userName });
-    
-        socket.on('connect_room', function (msg) {
-            socket.emit('users_list', idRoom);
-        });
-    }
-    
-\end{lstlisting}
+function loadConnect() {
+    socket.emit('connect_room', { idRoom: idRoom, rootIdRoom: rootIdRoom, userName: userName });
+
+    socket.on('connect_room', function (msg) {
+        socket.emit('users_list', idRoom);
+    });
+}
